@@ -1,10 +1,10 @@
-addBookToLibrary(new Book("The Hobbit", "Tolkien", 300, true));
-
 function renderTable(library, table) {
-    table.appendChild(library[0].createTableHeaderRow());
+    table.innerHTML = "";
+    table.appendChild(new Book().createTableHeaderRow());
     library.forEach(function (book) {
         table.appendChild(book.createTableRow());
     });
 }
 
-renderTable(myLibrary, document.getElementsByTagName("table")[0])
+const table = document.getElementsByTagName("table")[0]
+renderTable(myLibrary, table)
