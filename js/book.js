@@ -10,11 +10,11 @@ function Book(title, author, nPages, isRead) {
     this.isRead = isRead;
 }
 
-function BookHeader() {
-    this.title = "Title";
-    this.author = "Author";
-    this.nPages = "Number of Pages";
-    this.isRead = "Has been read";
+Book.prototype.renderTableRow = function () {
+    const tr = document.createElement("tr");
+    Object.values(this).forEach(function (v) {
+        const col = tr.insertCell(-1);
+        col.innerHTML = v;
+    }) 
+    return tr;
 }
-
-BookHeader.prototype = Object.create(Book.prototype);

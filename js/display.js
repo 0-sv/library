@@ -1,0 +1,1 @@
+addBookToLibrary(new Book("The Hobbit", "Tolkien", 300, true));
