@@ -10,7 +10,7 @@ function Book(title, author, nPages, isRead) {
     this.isRead = isRead;
 }
 
-Book.prototype.renderTableRow = function () {
+Book.prototype.createTableRow = function () {
     const tr = document.createElement("tr");
     Object.values(this).forEach(function (v) {
         const col = tr.insertCell(-1);
