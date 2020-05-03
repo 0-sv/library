@@ -18,3 +18,13 @@ Book.prototype.createTableRow = function () {
     }) 
     return tr;
 }
+
+Book.prototype.createTableHeaderRow = function () {
+    const tr = document.createElement("tr");
+    Object.keys(this).forEach(function (k) {
+        const th = document.createElement("th");
+        th.innerHTML = k;
+        tr.appendChild(th);
+    })
+    return tr;
+}
