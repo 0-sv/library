@@ -36,15 +36,15 @@ function renderTable() {
     myLibrary.forEach(function (book) {
         myTable.appendChild(createTableRow(book));
     });
-}
-
-function addBookToLibrary(bookParam) {
-    myLibrary.push(new Book(bookParam));
-    renderTable();
     const nodes = document.querySelectorAll("tr");
     let idx = 0;
     nodes.forEach(function (n) {
         n.setAttribute("id", idx);
         idx++;
     });
+}
+
+function addBookToLibrary(bookParam) {
+    myLibrary.push(new Book(bookParam));
+    renderTable();
 }
