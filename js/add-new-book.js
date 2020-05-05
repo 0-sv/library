@@ -24,12 +24,12 @@ function createForm() {
         });
         addBookToLibrary(new Book(formObj));
         renderTable();
-        document.querySelector("form").innerHTML = "";
+        this.remove();
     });
     return form;
 }
 
 const btn = document.getElementsByTagName("button")[0];
 btn.addEventListener("click", function (e) {
-    if (document.querySelector("form") === null) this.parentNode.insertBefore(createForm(), this.nextSibling);
-})
+    if (document.querySelectorAll("form").length === 0 ) this.parentNode.insertBefore(createForm(), this.nextSibling);
+});
