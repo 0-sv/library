@@ -4,6 +4,7 @@ let myTable = document.getElementsByTagName("table")[0]
 function createRemoveButton() {
     const button = document.createElement("button");
     button.textContent = "Remove";
+    button.setAttribute("class", "remove");
     return button;
 }
 
