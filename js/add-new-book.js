@@ -1,4 +1,5 @@
-function createForm(book) {
+function createForm() {
+    const book = new Book();
     const form = document.createElement("form");
     Object.keys(book).forEach(function (k) {
         const label = document.createElement("label");
@@ -30,6 +31,5 @@ function createForm(book) {
 
 const btn = document.getElementsByTagName("button")[0];
 btn.addEventListener("click", function (e) {
-    const form = createForm(new Book());
-    this.parentNode.insertBefore(form, this.nextSibling);
+    if (document.querySelector("form") === null) this.parentNode.insertBefore(createForm(), this.nextSibling);
 })
