@@ -31,4 +31,10 @@ function renderTable() {
 function addBookToLibrary(bookParam) {
     myLibrary.push(new Book(bookParam));
     renderTable();
+    const nodes = document.querySelectorAll("tr");
+    let idx = 0;
+    nodes.forEach(function (n) {
+        n.setAttribute("id", idx);
+        idx++;
+    });
 }
