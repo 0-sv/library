@@ -11,7 +11,7 @@ function createForm(book) {
         form.appendChild(label);
         form.appendChild(input);
     });
-    
+
     const submit = document.createElement("input");
     submit.type = "submit";
     form.appendChild(submit);
@@ -21,8 +21,8 @@ function createForm(book) {
         document.querySelectorAll('input[type="text"]').forEach(function (node) {
             formObj[node.name] = node.value;
         });
-        myLibrary.push(new Book(formObj))
-        renderTable(myLibrary, table);
+        addBookToLibrary(new Book(formObj));
+        renderTable();
         document.querySelector("form").innerHTML = "";
     });
     return form;
