@@ -22,8 +22,7 @@ function createForm() {
         document.querySelectorAll('input[type="text"]').forEach(function (node) {
             formObj[node.name] = node.value;
         });
-        addBookToLibrary(new Book(formObj));
-        renderTable();
+        addBookToLibrary(formObj);
         this.remove();
     });
     return form;
