@@ -1,9 +1,6 @@
-const btn = document.getElementsByTagName("button")[0];
-btn.addEventListener("click", function (e) {
+function createForm(book) {
     const form = document.createElement("form");
-    this.parentNode.insertBefore(form, this.nextSibling);
-
-    Object.keys(new Book()).forEach(function (k) {
+    Object.keys(book).forEach(function (k) {
         const label = document.createElement("label");
         label.innerHTML = k;
 
@@ -14,7 +11,7 @@ btn.addEventListener("click", function (e) {
         form.appendChild(label);
         form.appendChild(input);
     });
-
+    
     const submit = document.createElement("input");
     submit.type = "submit";
     form.appendChild(submit);
@@ -28,4 +25,11 @@ btn.addEventListener("click", function (e) {
         renderTable(myLibrary, table);
         document.querySelector("form").innerHTML = "";
     });
+    return form;
+}
+
+const btn = document.getElementsByTagName("button")[0];
+btn.addEventListener("click", function (e) {
+    const form = createForm(new Book());
+    this.parentNode.insertBefore(form, this.nextSibling);
 })
