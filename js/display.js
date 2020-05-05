@@ -1,6 +1,12 @@
 let myLibrary = [];
 let myTable = document.getElementsByTagName("table")[0]
 
+function createRemoveButton() {
+    const button = document.createElement("button");
+    button.textContent = "Remove";
+    return button;
+}
+
 function createTableHeaderRow (book) {
     const tr = document.createElement("tr");
     Object.keys(book).forEach(function (k) {
@@ -17,6 +23,9 @@ function createTableRow (book) {
         const col = tr.insertCell(-1);
         col.innerHTML = v;
     });
+    const remove = tr.insertCell(-1);
+    const removeBtn = createRemoveButton();
+    remove.appendChild(removeBtn);
     return tr;
 }
 
